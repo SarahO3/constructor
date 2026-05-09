@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>Book Library</title>
+   
+</head>
+<body>
+    <header>
+        <h1>Library Wrold</h1>
+        <button id="new-book-btn">Add New Book</button>
+    </header>
+    <main class="main-container">
+        
+        <div class="books-grid">
+            <!-- cards will be displayed here -->
+    
+        </div>
+    </main>
+
+    <dialog class="form-container">
+        <form id="book-form" method="dialog">
+            <h2>Add New Book</h2>
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="number" id="pages" placeholder="Pages" required>
+              <textarea
+          name="description"
+          id="description"
+          placeholder="Book Description"
+        ></textarea>
+            <label>
+                Read? 
+                <input type="checkbox" id="read-status">
+            </label>
+            <div class="form-buttons">
+                <button type="button" id="cancel-btn">Cancel</button>
+                <button type="submit" id="submit-btn">Add to Library</button>
+            </div>
+        </form>
+    </dialog>
+
+
+    
+    <!-- pesudo code  for html-->
+
+    <!-- create a simple main container of 90% width
+     2. creat bokks-grid container set it to display great repeat(autofill, minmax(250px, 1fr)) -->
+     <!-- 3 reset and give it  a font family 
+      4. have a class for card which books will be dsplayed in...class will be added to div card in js
+      5. create a class read-true and read-false which will be added based if a book is read or not-->
+      
+
+     <!-- 4. Sett up  a form with input field for title, author, pages and read -->
+      <!-- 5. For js
+       a. create an empty array
+       b create an object constructor for book
+       *create prototype function that toggles book from read to not read
+       c. create a function to add book...
+       d. should take all book properties or a single book
+       d. create a new book instance and pass in all book props
+       #push in new book to array and call displaybook function
+
+       6 Display book function
+       # get the container element by id
+       then set its textcontent to an empty string to clear current display
+       e. loop over books array with foreach
+       f. inside it create a card  to hold each new book
+       g. add the card class to card, also add the class  of read and pass in book.read
+       h. setAttribute of data-id, book.id on card
+       i. get card textcontent and display book props inside of it
+       #card.textContent = ``
+       h3 title
+       p. author 
+       p. status uss js to dynamicall show read or not read
+       button to chnage status with calls of toggle-btn
+        button to remove with class of remove-btn       
+        
+        
+
+        7. remove functionality
+        1. we get card element by queryselector and pass in remove.btn class
+        2. then add eventlistener
+        3. call removeBook function with id
+        
+        
+
+        8. Toogle functionality 
+        1. get card element and pass in toggle.btn class
+        2. add event listener for click
+       3.  pass book.toggleRead function
+       4. call display book function
+
+
+       then finally get container and append card to it
+       
+       
+       8 Remove function
+        1. takes and id
+        2. filter function is call on the books array and it returns all books excerpt for the id passed-->
+
+
+
+        <!-- interaction logic
+        1. get dialog, show new btn and form element by id
+        2. add event listener of click to showbtn
+        3. pass in dialog.showModal function
+
+        9. add submit event to form, 
+        2. pass in event. call event to prevent default submit behaviour of refresing
+        3. get all book properties via dom and get their value
+        4. call the add book function and pass in book props
+        5. call reset function on form
+        6. then call close function on dialog
+        -->
+
+
+        <script src="books.js"></script>
+</body>
+</html>
